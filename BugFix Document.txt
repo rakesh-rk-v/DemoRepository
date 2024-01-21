@@ -1,3 +1,9 @@
+<<<<<<< HEAD
 This is a Bug Fix Directory.
 
 This is a BUF fIX TO sEE Merge Conflicts.
+=======
+This is a Main Directory.
+
+Modified for the Merge Conflicts.
+>>>>>>> main
