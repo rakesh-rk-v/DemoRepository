@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/test_scene1_API" name="Test_Scene1" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="GET">
+        <inSequence>
+            <log>
+                <property name="Welcome" value="This is a welcome message Log Property "/>
+            </log>
+            <property expression="get-property('SYSTEM_DATE', 'yyyy-MM-dd')" name="date" scope="default" type="STRING"/>
+            <payloadFactory media-type="json">
+                <format>{&#xd;
+"Date" : "$1"&#xd;
+}</format>
+                <args>
+                    <arg evaluator="xml" expression="get-property('Date')"/>
+                </args>
+            </payloadFactory>
+            <respond/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+</api>
