@@ -1,0 +1,19 @@
+<template xmlns="http://ws.apache.org/ns/synapse" name="wikiSearch">
+   <parameter name="keyword" description="The word that is needed to search using wikipedia"/>
+        <sequence>
+         <property name="uri.var.keyword" expression="$func:keyword"/>
+         <script language="js">
+            <![CDATA[
+                    var keyword = mc.getProperty('uri.var.keyword');
+                    urlQuery =  '?action=query&list=search&' + 'srsearch=' + keyword + '&utf8=&format=json';
+                    mc.setProperty('uri.var.urlQuery',urlQuery);
+                    ]]>
+         </script>
+         <call>
+            <endpoint>
+               <http method="GET"
+                    uri-template="{uri.var.baseUrl}{+uri.var.urlQuery}"/>
+              </endpoint>
+          </call>
+      </sequence>
+</template>

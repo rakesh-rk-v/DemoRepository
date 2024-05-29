@@ -1,0 +1,6 @@
+<template name="init" onError="fault" xmlns="http://ws.apache.org/ns/synapse">
+   <parameter name="baseUrl" description="API Url to access the endpoint."/>
+   <sequence>
+      <property name="uri.var.baseUrl"expression="$func:baseUrl"/>
+   </sequence>
+</template>

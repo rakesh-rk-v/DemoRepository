@@ -1,0 +1,8 @@
+<component name="wikipedia-search" type="synapse/template" >
+    <subComponents> 
+      <component name="wikiSearch" >
+             <file>wikiSearch.xml</file>
+             <description>search operation for the wikipedia connector</description>
+      </component>         
+    </subComponents>    
+</component>
